@@ -1,0 +1,6 @@
+/captures
+/node_modules
+npm-debug.log
+.DS_Store
+sslkeys.txt
+debug.txt
