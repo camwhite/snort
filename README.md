@@ -1,6 +1,6 @@
 # Snort
 
-*Sniff disectted packets to JSON*
+*Sniff dissected packets to JSON*
 
 ### Requirements
 
