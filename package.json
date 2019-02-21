@@ -1,17 +1,18 @@
 {
   "name": "snort",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Packet sniffing utility",
   "main": "index.js",
   "bin": {
-    "snort": "./bin/global.sh"
+    "snort": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camwhite/snort.git"
   },
   "preferGlobal": true,
-  "keywords": [
-    "packet",
-    "sniffer"
-  ],
-  "author": "absoluteZero",
+  "keywords": ["packet", "sniffer"],
+  "author": "camwhite",
   "license": "MIT",
   "dependencies": {
     "chalk": "^1.1.3",
