@@ -7,9 +7,7 @@ const chalk = require('chalk')
 const { argv } = require('yargs')
 const { spawn } = require('child_process')
 const { parser } = require('stream-json')
-const {
-  streamArray
-} = require('stream-json/streamers/StreamArray')
+const { streamArray } = require('stream-json/streamers/StreamArray')
 
 const args = [
   `-a duration:${parseInt(argv.d)}`,
@@ -33,17 +31,10 @@ const args = [
 const { k, i, s, p, monitor } = argv
 
 if (k) {
-<<<<<<< HEAD
   args.push(`-o "ssl.keylog_file: ${k}"`)
 }
 if (monitor) {
   args.unshift(`-I -i ${i}`)
-=======
-  args.unshift(`-o "ssl.keylog_file: ${k}"`)
-}
-if (monitor) {
-  args.push(`-iI ${i}`)
->>>>>>> 4aeda6fbecf921424c257ae8d82d2fc49d880f41
   if (s && p) {
     args.unshift(`-o 'uat:80211_keys:\"wpa-pwd\",\"${p}:${s}\"'`)
   }
@@ -69,35 +60,24 @@ capture.stdout
   })
   .on('end', () => {
     const date = new Date().toISOString()
-<<<<<<< HEAD
     fs.writeFileSync(`captures/${date}.json`, JSON.stringify(captures))
-=======
-    fs.writeFileSync(
-      `captures/${date}.json`,
-      JSON.stringify(captures)
-    )
->>>>>>> 4aeda6fbecf921424c257ae8d82d2fc49d880f41
   })
 
-capture.stderr.on('data', err =>
-  console.log(chalk.red(err.toString()))
-)
+capture.stderr.on('data', err => console.log(chalk.red(err.toString())))
 
 const parseSource = data => {
   const parsedSource = {}
   const { layers } = data._source
-  Object.keys(layers).forEach((key) => {
+  Object.keys(layers).forEach(key => {
     const suffix = key.split('.').pop()
     parsedSource[suffix] = layers[key][0]
   })
   if (
     parsedSource.file_data &&
-    parsedSource.content_type ===
-      'application/json; charset=utf-8'
+    parsedSource.content_type === 'application/json; charset=utf-8'
   ) {
     parsedSource.file_data.replace('\\', '')
     parsedSource.file_data = JSON.parse(parsedSource.file_data)
   }
   return parsedSource
 }
-
