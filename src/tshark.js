@@ -77,3 +77,5 @@ const parseSource = (data) => {
   return parsedSource
 }
 
+module.exports = capture
+

@@ -4,13 +4,10 @@
   "description": "Packet sniffing utility",
   "main": "index.js",
   "bin": {
-    "snort": "./bin/global.sh"
+    "snort": "./bin/global.js"
   },
   "preferGlobal": true,
-  "keywords": [
-    "packet",
-    "sniffer"
-  ],
+  "keywords": ["packet", "sniffer"],
   "author": "absoluteZero",
   "license": "MIT",
   "dependencies": {
